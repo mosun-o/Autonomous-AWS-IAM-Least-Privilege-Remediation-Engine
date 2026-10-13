@@ -100,11 +100,15 @@ Refining the Lambda remediation function that handles incoming security findings
 
 - Step 2: Create the remediation Lambda function which receives security alerts and automatically updates the IAM role's trust policy
 
-*the production-ready python script for the purpose of this lab environment includes error handling and audit logging*
+[View the full python function](iam_role_remediation/iam_role_remediation.lambda_handler)
+
+*the python script for the purpose of this lab environment includes error handling and audit logging*
 
 
 
 ![screenshots](iam_role_remediation/IAM-Automated-Remediator.png)
+
+
 
 - *grant permissions to the Lambda execution role to update IAM role policies*
 
