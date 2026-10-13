@@ -69,11 +69,36 @@ Document a system architecture for this automated remediation pipeline by answer
 
 Refining the Lambda remediation function that handles incoming security findings. The function includes:
 
-- Safe error handling (try/except blocks) if an IAM role has already been deleted or modified.
+- Safe error handling (```try/except``` blocks) if an IAM role has already been deleted or modified.
 - A logging mechanism that prints out the exact timestamp, resource ARN, and action taken for compliance audit trails.
 - A strict least-privilege trust policy replacement that restricts role assumptions strictly to the local AWS account service principals.
 
-*this python function is a simplified policy meant for the purpose of this lab*
+[View the full python function](iam_role_remediation/iam_role_remediation.py)
+
+*this Python function uses a simplified IAM trust policy for demonstration purposes in this lab environment*
+
+## Part 3: Building the Autonomous AWS IAM Remediation Pipeline
+
+- Step 1: Create a vulnerable test IAM role using the following insecure trust policy which allows any eternal AWS account to assume the role:
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+```
+
+
+
+
 
 
 
