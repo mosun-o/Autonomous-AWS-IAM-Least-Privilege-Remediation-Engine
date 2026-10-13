@@ -96,8 +96,21 @@ Refining the Lambda remediation function that handles incoming security findings
 }
 ```
 
+![screenshots](iam_role_remediation/CloudScale-Audit-Test-Role.png)
+
+- Step 2: Create the remediation Lambda function which receives security alerts and automatically updates the IAM role's trust policy
 
 
+
+- *grant permissions to the Lambda execution role to update IAM role policies*
+
+
+
+- Step 3: Connect AWS IAM Access Analyzer security alerts directly to the Lambda remediation function
+
+
+
+- Step 4: Verify and Test the Pipeline
 
 
 
