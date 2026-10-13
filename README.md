@@ -73,7 +73,7 @@ Refining the Lambda remediation function that handles incoming security findings
 - A logging mechanism that prints out the exact timestamp, resource ARN, and action taken for compliance audit trails.
 - A strict least-privilege trust policy replacement that restricts role assumptions strictly to the local AWS account service principals.
 
-*this python script is a simplified policy meant for the purpose of this lab*
+*this python function is a simplified policy meant for the purpose of this lab*
 
 
 
