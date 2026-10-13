@@ -77,4 +77,3 @@ Refining the Lambda remediation function that handles incoming security findings
 
 
 
-
