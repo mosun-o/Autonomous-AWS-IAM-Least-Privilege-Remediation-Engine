@@ -112,13 +112,28 @@ Refining the Lambda remediation function that handles incoming security findings
 
 - *grant permissions to the Lambda execution role to update IAM role policies*
 
+
 ![screenshots](iam_role_remediation/LambdaIAMRemediationPolicy.png)
+
+
+
 
 - Step 3: Connect AWS IAM Access Analyzer security alerts directly to the Lambda remediation function
 
 
+![screenshots](iam_role_remediation/AccessAnalyzer-IAM-AutoRemediation-Rule.png)
+
 
 - Step 4: Verify and Test the Pipeline
+
+![screenshots](iam_role_remediation/CloudWatchLogs.png)
+
+
+From the CloudWatch Logs, a test run against `CloudScale-Audit-Test-Role` confirmed the pipeline works end to end:
+
+- IAM Access Analyzer flagged an unsafe external trust policy
+- EventBridge routed the finding to the remediation Lambda
+- Lambda remediated the trust policy automatically 
 
 
 
