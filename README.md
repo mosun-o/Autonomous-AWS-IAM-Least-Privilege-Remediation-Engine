@@ -126,8 +126,9 @@ Refining the Lambda remediation function that handles incoming security findings
 
 - Step 4: Verify and Test the Pipeline
 
-![screenshots](iam_role_remediation/CloudWatchLogs.png)
+*CloudWatch Logs showing detection and automatic remediation of the unsafe trust policy*
 
+![screenshots](iam_role_remediation/CloudWatchLogs.png)
 
 From the CloudWatch Logs, a test run against `CloudScale-Audit-Test-Role` confirmed the pipeline works end to end:
 
