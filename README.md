@@ -118,7 +118,15 @@ Refining the Lambda remediation function that handles incoming security findings
 
 
 
-- Step 3: Connect AWS IAM Access Analyzer security alerts directly to the Lambda remediation function
+- Step 3: Connect AWS IAM Access Analyzer security alerts directly to the Lambda remediation function using the following rule configurations:
+
+- *Name: AccessAnalyzer-IAM-AutoRemediation-Rule*
+- *Event source: Select AWS services*
+- *Service provider: Select Access Analyzer*
+- *Event type: Select Access Analyzer Finding Created*
+- *Target types: AWS service*
+- *Select a target: Choose Lambda function*
+- *Function: Select the IAM-Automated-Remediator function*
 
 
 ![screenshots](iam_role_remediation/AccessAnalyzer-IAM-AutoRemediation-Rule.png)
@@ -126,7 +134,7 @@ Refining the Lambda remediation function that handles incoming security findings
 
 - Step 4: Verify and Test the Pipeline
 
-*CloudWatch Logs showing detection and automatic remediation of the unsafe trust policy*
+*CloudWatch Logs showing detection and automatic remediation of the `CloudScale-Audit-Test-Role` unsafe trust policy*
 
 ![screenshots](iam_role_remediation/CloudWatchLogs.png)
 
