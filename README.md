@@ -158,5 +158,9 @@ AWS IAM Access Analyzer detected the unsafe trust policy and generated a securit
 
 This confirms the workflow can identify and fix an exploitable trust relationship automatically. By reducing the time an unsafe configuration stays active, it limits the opportunity for unauthorized cross-account access and lateral movement.
 
+## Conclusion
 
+This project shows how an event-driven pipeline of IAM Access Analyzer, Amazon EventBridge, and AWS Lambda can detect and correct unsafe cross-account trust policies automatically, with every action recorded in CloudWatch Logs for auditability. 
+
+It also highlights the importance of continuous cloud security monitoring, least-privilege access, and automated incident response in reducing the risk of unauthorized cross-account access and lateral movement.
 
