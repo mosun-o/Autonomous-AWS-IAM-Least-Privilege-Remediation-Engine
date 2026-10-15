@@ -134,16 +134,29 @@ Refining the Lambda remediation function that handles incoming security findings
 
 - Step 4: Verify and Test the Pipeline
 
-*CloudWatch Logs showing detection and automatic remediation of the `CloudScale-Audit-Test-Role` unsafe trust policy*
 
 ![screenshots](iam_role_remediation/CloudWatchLogs.png)
 
-From the CloudWatch Logs, a test run against `CloudScale-Audit-Test-Role` confirmed the pipeline works end to end:
 
-- IAM Access Analyzer flagged an unsafe external trust policy
-- EventBridge routed the finding to the remediation Lambda
-- Lambda remediated the trust policy automatically 
+*CloudWatch Logs showing the detection and automatic remediation of the unsafe trust policy associated with the ```CloudScale-Audit-Test-Role``` IAM role*
 
+
+The CloudWatch Logs from a test run against ```CloudScale-Audit-Test-Role``` confirmed that the remediation pipeline worked end to end:
+
+- IAM Access Analyzer detected an unsafe external trust policy
+- EventBridge routed the finding to the remediation Lambda function
+- The Lambda function automatically remediated the trust policy
+
+
+## Part 4: Incident Response Documentation
+
+**Post-Incident Report**: How Automated Remediation Prevents Lateral Movement from a Misconfigured Cross-Account IAM Role
+
+When a developer accidentally deploys a misconfigured cross-account IAM role, its trust policy can let an external AWS account assume it, creating a potential pathway for unauthorized cross-account access and lateral movement.
+
+AWS IAM Access Analyzer detected the unsafe trust policy and generated a security finding. Amazon EventBridge routed the finding to the remediation AWS Lambda function, which automatically updated the role’s trust policy to remove the unauthorized external access. Amazon CloudWatch Logs captured the execution details from a test run against ```CloudScale-Audit-Test-Role``` confirming that the detection and remediation pipeline operated end to end without manual intervention.
+
+This confirms the workflow can identify and fix an exploitable trust relationship automatically. By reducing the time an unsafe configuration stays active, it limits the opportunity for unauthorized cross-account access and lateral movement.
 
 
 
